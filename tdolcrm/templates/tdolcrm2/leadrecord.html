@@ -1,0 +1,46 @@
+{%extends 'tdolcrm/base2.html'%}
+{% block content %}
+<div class="recordds">
+  <h3>Lead Record </h3>
+</div>
+            <div class="card">
+                <div class="card-header">
+                    <h2>{{lead_record.First_Name}} {{lead_record.Last_Name}}</h2></br>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    <strong id = "lists">Email Address: </strong>{{lead_record.Email_Address}} </p>
+                    <p class="card-text">
+                    <strong id = "lists" >Address: </strong>{{lead_record.Address_1}}</p>
+                    <p class="card-text">
+                    <strong id ="lists" >Company Name: </strong>{{lead_record.Company_Name}}</p>
+                    <p class="card-text">
+                    <strong id="lists">Birthdate: </strong>{{lead_record.Birthdate}}</p>
+                    <p class="card-text">
+                      <strong id="lists">id: </strong>{{lead_record.id}}</p>
+                </div>
+              </div>
+
+              <style>
+                #sec{
+                  bottom:-35px;
+                  width:120px;
+                  right:-140px; 
+                  margin-right: 10px; 
+                }
+                .card{
+                  margin-top:50px; 
+                  margin-bottom:40px
+                }
+                .recordds{
+                  margin-right:30px; 
+                }
+                *{
+                  font-weight: lighter;
+                }
+              </style>
+
+              <a href = "{% url 'leads-list' %}" class ="btn btn-secondary" id ="sec">Back</a>
+              <a href = "{% url 'delete_lead' lead_record.id%}" class ="btn btn-danger" id = sec>Delete</a>
+
+{% endblock %}

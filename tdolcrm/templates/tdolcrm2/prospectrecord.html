@@ -1,0 +1,51 @@
+{%extends 'tdolcrm/base2.html'%}
+{% block content %}
+<h3>prospect Record:</h3>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2>{{prospect_record.First_Name}} {{prospect_record.Last_Name}}</h2></br>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    <strong id = "lists">Email Address: </strong>{{prospect_record.Email_Address}} </p>
+                    <p class="card-text">
+                    <strong id = "lists" >Address: </strong>{{prospect_record.Address_1}}</p>
+                    <p class="card-text">
+                    <strong id ="lists" >Company Name: </strong>{{prospect_record.Company_Name}}</p>
+                    <p class="card-text">
+                    <strong id = "lists">Nature of Business: </strong>{{prospect_record.Nature_of_Business}} </p>
+                    <p class="card-text">
+                    <strong id = "lists" >Address: </strong>{{prospect_record.Nature_of_Shipment}}</p>
+                    <p class="card-text">
+                    <strong id ="lists" >Company Name: </strong>{{prospect_record.Pickup_location}}</p>
+                    <p class="card-text">
+                    <strong id="lists">No of Packages Monthly: </strong>{{prospect_record.NoOfPackages_Monthly}}</p>
+                    <p class="card-text">
+                      <strong id="lists">Monthly Revenue: </strong>{{prospect_record.Monthly_revenue}}</p>
+                </div>
+              </div>
+
+              <style>
+                #lists{
+                  font-weight: bold;
+                }
+                #sec{
+                  bottom:-35px;
+                  width:120px;
+                  right:-140px; 
+                  margin-right: 10px; 
+                }
+                .card{
+                  margin-top:50px; 
+                  margin-bottom:40px
+                }
+                *{
+                  font-weight: lighter;
+                }
+              </style>
+
+              <a href = "{% url 'prospects-list' %}" class ="btn btn-secondary" id ="sec">Back</a>
+              <a href = "{% url 'delete_prospect' prospect_record.id%}" class ="btn btn-danger" id = sec>Delete</a>
+
+{% endblock %}

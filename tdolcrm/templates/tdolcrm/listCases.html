@@ -1,0 +1,72 @@
+{% extends 'tdolcrm/base3.html' %}
+{% block title %} Cases List{% endblock %}
+
+{% block content %}
+<div class="container">
+  <a href = "{% url 'case' %}"button type="button" class="btn btn-primary btn-lg" id ="buttss">Add Case</a>
+  {%include 'tdolcrm/messages.html'%}
+  <table class="table table-striped table-hover" id ="ContactTable">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col" id="colname">Date Processed</th>
+          <th scope="col1" id="colname">Case Description</th>
+          <th scope="col1" id="colname">Shipment</th>
+          <th scope="col1" id="colname">Case Categories</th>  
+        </tr>
+      </thead>
+
+      <tbody>
+      {% if cases %}
+          {% for case in cases %} 
+          <tr>
+              <td>{{cases.Date_processed}}</td>
+              <td>{{cases.Case_Description}}</td>
+              <td>{{cases.Shipment}}</td>
+              <td>{{cases.Case_Categories}}</td>
+          </tr>
+          
+          {% endfor %}
+      {% endif %}
+      </tbody>
+      </table>
+      <style>
+        .card{
+          width:100%;
+          right:-94px;
+
+        }
+      
+        .col-8{
+          left: -189px;
+        }
+
+        .table table-striped table-hover{
+          width:125%; 
+        }
+        .table{
+          width:152%;
+        }
+        #colname{
+          font-weight: bold;
+        }
+        *{
+          font-weight:lighter;
+        }
+        .nav-item{
+          font-weight:bold;
+        }
+
+        #contactwidth{
+          color: #27445c;
+        }
+        #buttss{
+          position:relative; 
+          top: -130px; 
+          right:-58rem; 
+          width:160px; 
+          background:green;  
+        }
+      </style>
+      </div>
+      
+  {% endblock %}

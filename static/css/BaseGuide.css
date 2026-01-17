@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=poppins:wght@400;500;600;700&display=swap");
+*{
+    margin:0;
+    padding:0;
+    outline:none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "poppings", sans-serif;
+    font-weight:bolder;
+}
+ 
+nav{
+    position: fixed;
+    top:0;
+    bottom: 0;
+    height: 100%;
+    width:79px;
+    background: #27445C;
+    overflow: hidden;
+    transition: width 0.2s linear;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1 );
+    z-index:2;
+}
+.container{
+    position:relative; 
+}
+a{
+    position: relative; 
+    color:white;
+    font-size: 16px;
+    display:table; 
+    width:250px;
+    padding:4px;
+}
+.fas{
+    position: relative;
+    width:70px;
+    height:40px;
+    top:0px;
+    font-size:20px;
+    text-align:center;
+}
+.nav-item{
+    position:relative;
+    top:12px;
+    margin-left: 10px;
+}
+
+nav:hover{
+    width:245px;
+    transition:all 0.5s ease;
+}
+h4{
+    text-align: center;
+}
+.card{
+    width:80%;
+    display:table;
+}
+footer{
+    height:auto;
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    width:100vw;
+    bottom:0px;
+}
+.asteriskField{
+    color:red;
+}
+.col-9{
+    max-width: 70%;
+}
+.col-3{
+    font-weight: bolder;
+}
+.textarea.form-control{
+    height:100px; 
+}
+.logo{
+    text-align: center;
+    display: flex; 
+    transition: all 0.5s ease;
+}
+.logo img{
+    border-radius: 50%;
+    width:35%;
+    height:35%; 
+    padding-bottom:20px;
+}
+.logo span{
+    font-weight: bold;
+    padding-left:30px;
+    font-size: 18px;
+}
+
+/* this is CSS to reduce the width of all the respective form fields*/
+#logout{
+    bottom:-14px; 
+}
+
+#id_Birthdate , #id_Date_created1, #id_Start_date1, #id_End_date1, #id_Date_created, #id_Start_date, #id_End_date,#id_Date_processed{
+    width:50%;
+}
+#contactwidth{
+    width:70px; 
+}

@@ -1,0 +1,74 @@
+{% extends 'tdolcrm/base3.html' %}
+{% block title %} Activities{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <a href = "{% url 'activity' %}"button type="button" class="btn btn-primary btn-lg" id ="buttss">Add Activity</a>
+    {%include 'tdolcrm/messages.html'%}
+  <table class="table table-striped table-hover" id ="ContactTable">
+      <thead class ='table-dark'>
+        <tr>
+            <th scope="col" id="colname">ID</th>
+            <th scope="col1" id="colname">Activity Name</th>
+            <th scope="col1" id="colname">Date Created</th>
+            <th scope="col1" id="colname">Start Date</th>
+            <th scope="col1"id="colname">End Date</th>
+            <th scope="col1" id="colname">Campaign Activities</th>
+            <th scope="col1"id="colname">Employee Assigned</th>
+        </tr>
+      </thead>
+
+      <tbody>
+      {% if activities %}
+          {% for activity in activities %}
+          <tr>
+             <td>{{activity.id}}</td>
+              <td>{{activity.Activity_name}}</td>
+              <td>{{activity.Date_created1}}</td>
+              <td>{{activity.Start_date1}}</td>
+              <td>{{activity.End_date1}}</td>
+              <td>{{activity.Campaign_Activities}}</td>
+              <td>{{activity.Employee_assigned}}</td>
+          </tr>
+          
+          {% endfor %}
+      {% endif %}
+      </tbody>
+      </table>
+      <style>
+        .card{
+          width:100%;
+          right:-94px;
+        }
+      
+        .col-8{
+          left: -189px;
+        }
+
+        .table table-striped table-hover{
+          width:125%; 
+        }
+        .table{
+          width:152%;
+        }
+        #colname{
+          font-weight: bold;
+        }
+        *{
+          font-weight:lighter;
+        }
+        .nav-item{
+          font-weight:bold;
+        }
+        #buttss{
+          position:relative; 
+          top: -130px; 
+          right:-58rem; 
+          width:160px; 
+          background:green;  
+        }
+        
+      </style>
+  </div>
+
+  {% endblock %}

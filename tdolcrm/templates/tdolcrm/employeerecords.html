@@ -1,0 +1,22 @@
+{% extends 'tdolcrm/base.html' %}
+
+{% load crispy_forms_tags %}
+{%include 'tdolcrm/messages.html'%}
+
+
+{% block content %}
+  {% crispy form %}
+  <style>
+    .card{
+      top:-10px; 
+    }
+  </style>
+  <script>
+    let rolez_field = document.getElementById("id_rolez")
+  </script>
+ 
+{% endblock %}
+
+
+
+

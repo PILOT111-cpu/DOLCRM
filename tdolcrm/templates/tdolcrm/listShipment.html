@@ -1,0 +1,69 @@
+{% extends 'tdolcrm/base3.html' %}
+{% block title %} Shipment list {% endblock %}
+
+{% block content %}
+<div class="container">
+  <a href = "{% url 'shipment' %}"button type="button" class="btn btn-primary btn-lg" id ="buttss">Add Shipment</a>
+  {%include 'tdolcrm/messages.html'%}
+  <table class="table table-striped table-hover" id ="ContactTable">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col" id="colname">Tracking ID</th>
+          <th scope="col1" id="colname">Shipment Order</th>
+          <th scope="col1" id="colname">Escalation</th>  
+        </tr>
+      </thead>
+
+      <tbody>
+      {% if shipments %}
+          {% for shipment in shipments %}
+          <tr>
+              <td>{{shipment.Tracking_id}}</td>
+              <td>{{shipment.shipmentorder1}}</td>
+              <td>{{shipment.Escalation}}</td>
+          </tr>
+          
+          {% endfor %}
+      {% endif %}
+      </tbody>
+      </table>
+      <style>
+        .card{
+          width:100%;
+          right:-94px;
+        }
+      
+        .col-8{
+          left: -189px;
+        }
+
+        .table table-striped table-hover{
+          width:125%; 
+        }
+        .table{
+          width:152%;
+        }
+        #colname{
+          font-weight: bold;
+        }
+        *{
+          font-weight:lighter;
+        }
+        .nav-item{
+          font-weight:bold;
+        }
+
+        #contactwidth{
+          color: #27445c;
+        }
+        #buttss{
+          position:relative; 
+          top: -130px; 
+          right:-58rem; 
+          width:160px; 
+          background:green;  
+        }
+      </style>
+      </div>
+      
+  {% endblock %}

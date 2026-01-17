@@ -1,0 +1,40 @@
+{% extends 'tdolcrm/base3.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class ="container mt-3" style="width: 95%; font-size: 19px">
+  <form method = "POST" class ="card p-3 mt-5" autocomplete="on">
+  {% csrf_token %}
+    <div class="col-6">
+      {{form.Assortment_ID|as_crispy_field}}
+      {{form.Customer_Name|as_crispy_field}}
+      {{form.Assort_description|as_crispy_field}}
+      <div class ="row">
+      
+        <div class="col-6">
+          {{form.Dimensional_weight1 | as_crispy_field}}
+        </div>
+        <div class="col-6">
+          {{form.Actual_weight1 | as_crispy_field}}
+        </div>
+    </div>
+    </div>
+
+    </div>
+
+
+
+
+
+
+  </div>
+  
+{% endblock %}
+
+<div class ="alert alert-primary alert-dismissible fade show" role="alert">{{message}}
+
+
+</div>
+
+

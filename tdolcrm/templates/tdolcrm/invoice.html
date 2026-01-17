@@ -1,0 +1,17 @@
+
+{% extends 'tdolcrm/base.html' %}
+
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+  {% crispy form %}
+  <style>
+    .card{
+      top:-25px;
+      margin-bottom: 70px; 
+    }
+  </style>
+{% endblock %}
+
+

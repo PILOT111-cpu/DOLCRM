@@ -1,0 +1,71 @@
+{% extends 'tdolcrm/base3.html' %}
+{% block title %} Employeerecord list {% endblock %}
+
+{% block content %}
+<div class="container">
+  <a href = "{% url 'employeerecord' %}"button type="button" class="btn btn-primary btn-lg" id ="buttss">Add Employee</a>
+  {%include 'tdolcrm/messages.html'%}
+
+  <table class="table table-striped table-hover" id ="ContactTable">
+      <thead class ='table-dark'>
+        <tr>
+            <th scope="col1" id="colname">ID</th>
+            <th scope="col1" id="colname">Employee Name</th>
+            <th scope="col1" id="colname">Employment Date</th>
+            <th scope="col1" id="colname">Resumption Date</th>
+      </thead>
+
+      <tbody>
+      {% if employeerecords %}
+          {% for employeerecord in employeerecords %}
+          <tr>
+              <td><a href="{% url 'employee_record' employeerecord.pk%}" id ="contactwidth">{{employeerecord.pk}}</a></td>
+              <td>{{employeerecord.Employee_Name}}</td>
+              <td>{{employeerecord.Employment_date}}</td>
+              <td>{{employeerecord.Resumption_date}}</td>
+          </tr>
+          
+          {% endfor %}
+      {% endif %}
+      </tbody>
+      </table>
+      <style>
+        .card{
+          width:100%;
+          right:-94px;
+        }
+      
+        .col-8{
+          left: -189px;
+        }
+
+        .table table-striped table-hover{
+          width:125%; 
+        }
+        .table{
+          width:152%;
+        }
+        #colname{
+          font-weight: bold;
+        }
+        *{
+          font-weight:lighter;
+        }
+        .nav-item{
+          font-weight:bold;
+        }
+        #buttss{
+          position:relative; 
+          top: -130px; 
+          right:-58rem; 
+          width:164px; 
+          background:green;  
+        }
+        #contactwidth{
+          color:blue; 
+        }
+       
+      </style>
+      </div>
+
+  {% endblock %}

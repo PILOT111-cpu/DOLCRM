@@ -1,0 +1,26 @@
+{%extends 'tdolcrm/base2.html'%}
+{% block content %}
+<h1>Contact Record:</h1>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2>{{contact_record.First_Name}} {{contact_record.Last_Name}}</h2></br>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    <strong id = "lists">Email Address: </strong>{{contact_record.Email_Address}} </p>
+                    <p class="card-text">
+                    <strong id = "lists" >Address: </strong>{{contact_record.Address_1}}</p>
+                    <p class="card-text">
+                    <strong id ="lists" >Company Name: </strong>{{contact_record.Company_Name}}</p>
+                    <p class="card-text">
+                    <strong id="lists">Birthdate: </strong>{{contact_record.Birthdate}}</p>
+                </div>
+              </div>
+
+              <a href ="{% url 'home' %}" class = "btn btn-seconday">Back
+              </a>
+              <a href = "{% url 'home' %}" class = "btn btn-danger">Delete
+              </a>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{%extends 'tdolcrm/base2.html'%}
+{% block content %}
+<h2>Campaign Record:</h2>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2> Budget: {{campaign_record.Budget}}</h2></br>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    <strong id = "lists">Date Created: </strong>{{campaign_record.Date_created}} </p>
+                    <p class="card-text">
+                    <strong id = "lists" >Start Date: </strong>{{campaign_record.Start_date}}</p>
+                    <p class="card-text">
+                    <strong id ="lists" >End Date: </strong>{{campaign_record.End_date}}</p>
+                    <p class="card-text">
+                    <strong id="lists">Actual Cost: </strong>{{campaign_record.Actual_cost}}</p>
+                    <p class="card-text">
+                    <strong id = "lists" >Expected Revenue: </strong>{{campaign_record.Expected_revenue}}</p>
+                    <p class="card-text">
+                    <strong id ="lists" >Campaign objective: </strong>{{campaign_record.Campaign_objective}}</p>
+                    <p class="card-text">
+                    <strong id="lists">Campaign Description: </strong>{{campaign_record.Campaign_description}}</p>
+                </div>
+              </div>
+
+              <style>
+                #lists{
+                  font-weight: bold;
+                }
+                #sec{
+                  bottom:-35px;
+                  width:120px;
+                  right:-140px; 
+                  margin-right: 10px; 
+                }
+                *{
+                  font-weight: lighter;
+                }
+                .card{
+                  margin-top:50px; 
+                  margin-bottom:40px
+                }
+
+              </style>
+
+              <a href = "{% url 'campaigns-list' %}" class ="btn btn-secondary" id ="sec">Back</a>
+              <a href = "{% url 'delete_campaign' campaign_record.id%}" class ="btn btn-danger" id = sec>Delete</a>
+
+{% endblock %}

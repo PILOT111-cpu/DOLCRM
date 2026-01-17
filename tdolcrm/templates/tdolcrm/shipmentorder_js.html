@@ -1,0 +1,22 @@
+<script>
+    document.addEventListener('DOMcontentLoaded', function() {
+        const container = document.getElementById('Additional_field'); 
+        const addButton = document.getElementById('add_btn'); 
+        let fieldCounter = 1; 
+
+        addButton.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const textField = document.createElement('input');
+            textField.type = 'text';
+            textfield.name = 'text_field_' + fieldCounter; 
+            textField.placeholder = 'Text Field' + fieldCounter;
+
+
+            container.appendChild(textField);
+
+            fieldCounter++;
+        });
+    });
+
+</script>

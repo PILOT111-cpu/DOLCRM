@@ -1,0 +1,79 @@
+{% extends 'tdolcrm/base3.html' %}
+{% block title %} Contacts love{% endblock %}
+
+{% block content %}
+<div class="container">
+  {% include 'tdolcrm/messages.html'%}
+  <a href = "{% url 'campaign' %}"button type="button" class="btn btn-primary btn-lg" id ="buttss">Add Campaign</a>
+  <table class="table table-striped table-hover" id ="ContactTable">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col" id="colname">ID</th>
+          <th scope="col1" id="colname">Budget</th>
+          <th scope="col1" id="colname">Actual Cost</th>
+          <th scope="col1" id="colname">Expected Revenue</th>
+          <th scope="col1"id="colname">Date Created</th>
+          <th scope="col1"id="colname">Start Date</th>
+          <th scope="col1"id="colname">End Date</th>
+      
+        </tr>
+      </thead>
+
+      <tbody>
+      {% if campaigns %}
+          {% for campaign in campaigns %}
+          <tr>
+            <td><a href="{% url 'campaign_record' campaign.pk%}" id ="contactwidth">{{campaign.pk}}</a></td>
+              <td>{{campaign.Budget}}</td>
+              <td>{{campaign.Actual_cost}}</td>
+              <td>{{campaign.Expected_revenue}}</td>
+              <td>{{campaign.Date_created}}</td>
+              <td>{{campaign.Start_date}}</td>
+              <td>{{campaign.End_date}}</td>
+            
+          </tr>
+          
+          {% endfor %}
+      {% endif %}
+      </tbody>
+      </table>
+      <style>
+        .card{
+          width:100%;
+          right:-94px;
+        }
+      
+        .col-8{
+          left: -189px;
+        }
+
+        .table table-striped table-hover{
+          width:125%; 
+        }
+        .table{
+          width:152%;
+        }
+        #colname{
+          font-weight: bold;
+        }
+        *{
+          font-weight:lighter;
+        }
+        .nav-item{
+          font-weight:bold;
+        }
+        #contactwidth{
+          width:70px; 
+          color:#27445c;
+        }
+        #buttss{
+          position:relative; 
+          top: -130px; 
+          right:-58rem; 
+          width:166px; 
+          background:green;  
+        }
+      </style>
+</div>
+      
+  {% endblock %}

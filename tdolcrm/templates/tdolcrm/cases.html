@@ -1,0 +1,9 @@
+{% extends 'tdolcrm/base.html' %}
+
+{% load crispy_forms_tags %}
+{%include 'tdolcrm/messages.html'%}
+
+
+{% block content %}
+  {% crispy form %}
+{% endblock %}
